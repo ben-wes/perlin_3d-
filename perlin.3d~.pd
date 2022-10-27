@@ -179,7 +179,7 @@
 #X obj 1049 107 array define \$0-gradients-x 16;
 #X obj 1049 137 array define \$0-gradients-y 16;
 #X obj 1049 167 array define \$0-gradients-z 16;
-#N canvas 799 356 426 342 create_gradients 1;
+#N canvas 799 356 426 342 create_gradients 0;
 #X obj 39 42 inlet;
 #X obj 39 66 t b b b;
 #X obj 85 145 array set \$0-gradients-x;

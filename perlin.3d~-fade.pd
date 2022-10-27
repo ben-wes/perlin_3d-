@@ -1,11 +1,11 @@
-#N canvas 197 41 570 363 12;
+#N canvas 611 152 450 397 12;
 #X obj 65 70 inlet~;
-#X obj 65 268 outlet~;
-#X obj 65 209 tabread~ \$1;
-#X text 156 209 read table name from first argument;
-#X obj 65 185 *~;
-#X obj 83 128 loadbang;
-#X obj 83 152 array size \$1;
+#X obj 65 298 outlet~;
+#X obj 66 228 tabread~ \$1;
+#X text 157 228 read table name from first argument;
+#X obj 66 204 *~;
+#X obj 84 147 loadbang;
+#X obj 84 171 array size \$1;
 #X connect 0 0 4 0;
 #X connect 2 0 1 0;
 #X connect 4 0 2 0;
