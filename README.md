@@ -19,5 +19,7 @@ Inlets are:
 3. z-coordinate
 4. persistence
 
+*See help patch for more explanations and examples*
+
 Explanations on Perlin noise:
 * https://en.wikipedia.org/wiki/Perlin_noise
