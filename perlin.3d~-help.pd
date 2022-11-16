@@ -6,12 +6,12 @@
 #X text 26 16 perlin.3d~ : Perlin's improved noise algorithm with 3 signal input dimensions, f 77;
 #X obj 219 138 bng 13 250 50 0 \$0-wikipedia-perlin \$0_ 1\ \ wikipedia 4 7 0 8 #c6ffc7 #000000 #000000;
 #X text 27 107 Perlin noise was invented by Ken Perlin with the aim of improving computer-generated imagery., f 35;
-#N canvas 7 -1052 1898 979 \$0-page 0;
+#N canvas 7 -1052 1893 979 \$0-page 0;
 #X obj 532 673 hsl 192 19 0.02 512 1 1 \$0-scale \$0-scale-receive visible\ range:\ 4.00 -2 -10 0 12 #c6ffc7 #000000 #000000 9970 1;
 #X obj 532 869 hsl 192 19 0 2 0 1 \$0-persistence \$0-persistence-receive persistence:\ 0.50 -2 -10 0 12 #c6ffc7 #000000 #000000 4775 1;
 #X obj 532 771 hsl 192 19 0 8 0 1 \$0-yoffset \$0-yoffset-receive y-offset:\ 0.00 -2 -10 0 12 #c6ffc7 #000000 #000000 0 1;
 #X obj 532 722 hsl 192 19 0 8 0 1 \$0-xoffset \$0-xoffset-receive x-offset:\ 0.00 -2 -10 0 12 #c6ffc7 #000000 #000000 0 1;
-#X obj 532 820 hsl 192 19 0 8 0 1 \$0-zoffset \$0-zoffset-receive z-offset:\ 15.83 -2 -10 0 12 #c6ffc7 #000000 #000000 19100 1;
+#X obj 532 820 hsl 192 19 0 8 0 1 \$0-zoffset \$0-zoffset-receive z-offset:\ 3.23 -2 -10 0 12 #c6ffc7 #000000 #000000 7715 1;
 #X obj 1264 658 cnv 1 6 1 empty \$0-ymax 2.00 10 2 0 12 #000000 #000000 0;
 #X obj 1264 978 cnv 1 6 1 empty \$0-ymin -2.00 10 0 0 12 #000000 #000000 0;
 #X obj 940 982 cnv 1 1 6 empty \$0-xmin -2.00 -18 17 0 12 #000000 #000000 0;
@@ -922,6 +922,7 @@
 #X obj 260 65 s \$0-gemhead;
 #X obj 53 172 &&;
 #X obj 63 142 t b f;
+#X obj 53 205 change 0;
 #X connect 0 0 1 0;
 #X connect 2 0 22 0;
 #X connect 2 1 0 0;
@@ -950,9 +951,10 @@
 #X connect 21 0 17 0;
 #X connect 22 0 10 0;
 #X connect 23 0 24 0;
-#X connect 25 0 11 0;
+#X connect 25 0 27 0;
 #X connect 26 0 25 0;
 #X connect 26 1 25 1;
+#X connect 27 0 11 0;
 #X restore 55 52 pd gemwin;
 #X obj 54 275 r \$0-scale;
 #X obj 54 299 makefilename %.2f;
