@@ -9,7 +9,7 @@
 #X text 310 131 z;
 #X obj 63 132 inlet~ fwd;
 #X obj 63 432 clone \$1 perlin.3d~.cl \$0, f 42;
-#N canvas 753 64 502 763 create_permutation 0;
+#N canvas 708 60 502 761 create_permutation 0;
 #X obj 96 378 until;
 #X obj 96 347 t f b;
 #X msg 140 378 0;
@@ -378,7 +378,6 @@
 #X restore 578 265 pd manage_harmonics;
 #X msg 546 265 1;
 #X text 401 191 controls via message;
-#X msg 195 399 vis 1 1;
 #X obj 546 241 t b l;
 #X text 721 258 for harmonics \, send octave persistence to 1, f 23;
 #X obj 354 481 clip~ 0 1;
@@ -388,7 +387,7 @@
 #X connect 8 0 30 0;
 #X connect 8 1 38 0;
 #X connect 9 0 34 0;
-#X connect 9 1 45 0;
+#X connect 9 1 44 0;
 #X connect 17 0 21 0;
 #X connect 19 0 4 0;
 #X connect 20 0 4 0;
@@ -398,8 +397,6 @@
 #X connect 22 0 36 0;
 #X connect 24 0 25 0;
 #X connect 25 0 28 0;
-#X connect 25 1 10 0;
-#X connect 28 0 10 0;
 #X connect 29 0 10 0;
 #X connect 29 1 14 0;
 #X connect 30 0 9 0;
@@ -409,12 +406,11 @@
 #X connect 33 0 31 1;
 #X connect 33 0 30 1;
 #X connect 34 0 3 0;
-#X connect 36 0 45 2;
+#X connect 36 0 44 2;
 #X connect 38 0 4 0;
 #X connect 38 1 25 0;
-#X connect 38 2 43 0;
+#X connect 38 2 42 0;
 #X connect 40 0 4 0;
-#X connect 42 0 9 0;
-#X connect 43 0 40 0;
-#X connect 43 1 39 0;
-#X connect 45 0 34 1;
+#X connect 42 0 40 0;
+#X connect 42 1 39 0;
+#X connect 44 0 34 1;
