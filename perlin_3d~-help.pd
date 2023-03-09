@@ -3,7 +3,7 @@
 #X declare -path else;
 #X obj 1 308 cnv 1 1360 2 empty empty empty 20 12 0 14 #f0f0f0 #404040 0;
 #X obj 1 1 cnv 15 1360 48 empty empty empty 20 12 0 14 #f0f0f0 #404040 0;
-#X text 26 16 perlin.3d~ : Perlin's improved noise algorithm with 3 signal input dimensions, f 77;
+#X text 26 16 perlin_3d~ : Perlin's improved noise algorithm with 3 signal input dimensions, f 77;
 #X obj 219 138 bng 13 250 50 0 \$0-wikipedia-perlin \$0_ 1\ \ wikipedia 4 7 0 8 #c6ffc7 #000000 #000000;
 #X text 27 107 Perlin noise was invented by Ken Perlin with the aim of improving computer-generated imagery., f 35;
 #N canvas 14 25 1897 979 \$0-page 0;
@@ -25,7 +25,7 @@
 #X obj 114 562 bng 19 250 50 0 \$0-vis-offset-to256 \$0_ set\ to\ 256 24 10 0 12 #c6ffc7 #000000 #000000;
 #X obj 17 562 bng 19 250 50 0 \$0-vis-offset-to0 \$0_ set\ to\ 0 24 10 0 12 #c6ffc7 #000000 #000000;
 #X obj 17 377 bng 19 250 50 0 \$0-vis-reseed \$0_ random\ seed 24 10 0 12 #c6ffc7 #000000 #000000;
-#X text 454 169 Every additional octave is based on the same noise function with a frequency of 2^n \, where n is the number of each added octave. The values of all octaves are summed up with a weight for each octave of persistence^n. This results in heigher octaves getting attenuated (which is true for persistance values <1. [perlin.3d~] also allows to amplify higher octaves by setting values >1)., f 57;
+#X text 454 169 Every additional octave is based on the same noise function with a frequency of 2^n \, where n is the number of each added octave. The values of all octaves are summed up with a weight for each octave of persistence^n. This results in heigher octaves getting attenuated (which is true for persistance values <1. [perlin_3d~] also allows to amplify higher octaves by setting values >1)., f 57;
 #N canvas 26 26 1156 732 (subpatch) 0;
 #X array \$0-vis-octave0 420 float 0;
 #X array \$0-vis-octave1 420 float 0;
@@ -180,7 +180,7 @@
 #X obj 469 76 t b a;
 #X obj 469 52 r \$0-vis-seed;
 #X obj 606 786 tabwrite~ \$0-vis-octave0;
-#X obj 606 614 perlin.3d~ 1 -seed 42 -offset 0.2;
+#X obj 606 614 perlin_3d~ 1 -seed 42 -offset 0.2;
 #X obj 718 762 tabwrite~ \$0-vis-octave1;
 #X obj 718 687 *~;
 #X obj 724 52 r \$0-vis-normalize;
@@ -190,7 +190,7 @@
 #X obj 578 76 t b f;
 #X obj 221 696 *~;
 #X obj 321 696 *~;
-#X obj 321 638 perlin.3d~ 3 -seed 42 -offset 0.2;
+#X obj 321 638 perlin_3d~ 3 -seed 42 -offset 0.2;
 #X obj 718 517 line~;
 #X obj 718 469 pack f f f;
 #X msg 718 493 \$2 \, \$1 \$3;
@@ -238,9 +238,9 @@
 #X obj 1232 762 s \$0-vis-octave1;
 #X obj 1232 738 s \$0-vis-octave0;
 #X obj 41 688 switch~ 512 1 1;
-#X obj 221 614 perlin.3d~ 3 -seed 42 -offset 0.2 normalize;
-#X obj 718 638 perlin.3d~ 1 -seed 42 -offset 0.4;
-#X obj 840 662 perlin.3d~ 1 -seed 42 -offset 0.8;
+#X obj 221 614 perlin_3d~ 3 -seed 42 -offset 0.2 normalize;
+#X obj 718 638 perlin_3d~ 1 -seed 42 -offset 0.4;
+#X obj 840 662 perlin_3d~ 1 -seed 42 -offset 0.8;
 #X obj 472 110 print;
 #X connect 0 0 38 0;
 #X connect 0 0 48 0;
@@ -523,7 +523,7 @@
 #X obj 591 401 /~ 4096;
 #X obj 134 37 r \$0-choose2d3d;
 #X obj 134 61 == 0;
-#X obj 589 737 perlin.3d~ 6 -seed 42;
+#X obj 589 737 perlin_3d~ 6 -seed 42;
 #X obj 81 299 translateXYZ -6.5 -6.5 -2.4;
 #X obj 702 667 r \$0-seed;
 #X obj 259 37 r \$0-gemstate;
@@ -713,7 +713,7 @@
 #X obj 380 39 r \$0-choose2d3d;
 #X obj 380 62 == 1;
 #X obj 59 39 r \$0-gemstate;
-#X obj 939 702 perlin.3d~ 4 0.8 -seed 42 normalize;
+#X obj 939 702 perlin_3d~ 4 0.8 -seed 42 normalize;
 #X obj 759 805 * 0.3;
 #X obj 670 840 sphere 0.1 5;
 #X obj 379 209 +;
@@ -923,7 +923,7 @@
 #X obj 247 243 + 965;
 #X obj 291 243 + 439;
 #X obj 247 194 else/canvas.bounds 3;
-#X msg 53 346 reset \, dimen 320 320 \, offset 1236 483 \, border 0 \, topmost 1 \, title perlin.3d~ \, color 0 0 0 \, create \, 1, f 101;
+#X msg 53 346 reset \, dimen 320 320 \, offset 1236 483 \, border 0 \, topmost 1 \, title perlin_3d~ \, color 0 0 0 \, create \, 1, f 101;
 #X obj 53 172 &&;
 #X obj 63 142 t b f;
 #X obj 53 205 change 0;
@@ -1130,7 +1130,7 @@
 #X connect 24 4 1 0;
 #X connect 24 5 12 0;
 #X restore 1383 860 pd run_page1_init;
-#X text 895 225 [perlin.3d~] is obviously a 3D noise. The visualization here is plotting the values for a range of x-coordinates. You can see how the graphs change for different y- and z-coordinates., f 57;
+#X text 895 225 [perlin_3d~] is obviously a 3D noise. The visualization here is plotting the values for a range of x-coordinates. You can see how the graphs change for different y- and z-coordinates., f 57;
 #X text 13 53 Perlin noise is a deterministic noise \, which means that it will always generate the same value for a certain input coordinate (based on an initial random permutation of its gradient vectors). It is also a gradient noise \, meaning that for continuous coordinates \, the values are continuous \, too., f 57;
 #X text 13 291 The values' continuity is ideal for audio applications and their deterministic property allows to use them for reproducible musical aspects if necessary (or for easily creating variations by reseeding the permutation)., f 57;
 #X obj 456 1377 bng 19 250 50 0 \$0-examples-modulation \$0_ load\ example:\ noise\ modulated\ noise 23 10 0 12 #c6ffc7 #000000 #000000;
@@ -1150,7 +1150,7 @@
 #X text 13 821 In the 3d visualization \, you can drag the view to rotate the camera perspective., f 57;
 #X text 13 1337 In order to create audible noise \, the movement obviously needs to have a certain speed (slow versions can otherwise be used to control other parameters like pitch or envelope \, of course). However \, this movement can be non-linear and the speed can vary in any possible way., f 57;
 #X obj 51 1480 bng 13 250 50 0 \$0-perlin-loops \$0_ 3\ \ necessarydisorder.wordpress.com 4 7 0 8 #c6ffc7 #000000 #000000;
-#X text 13 1253 The basic example above shows a very simple use of perlin.3d~ for creating audible Perlin noise. It's sonifying the values for a steady linear movement through Perlin 3d space with varying persistence (oscillating between 0 and 2)., f 57;
+#X text 13 1253 The basic example above shows a very simple use of perlin_3d~ for creating audible Perlin noise. It's sonifying the values for a steady linear movement through Perlin 3d space with varying persistence (oscillating between 0 and 2)., f 57;
 #X obj 941 659 cnv 320 320 320 empty empty empty 20 12 0 14 #f0f0f0 #404040 0;
 #X obj 965 807 tgl 19 0 \$0-gemwin empty display\ visualization\ (Gem\ required) 24 10 0 12 #ffc7c6 #000000 #000000 0 1;
 #X text 1694 8 November 2022 \, Ben Wesch;
@@ -1296,10 +1296,10 @@
 #X msg 58 545 \; pd open \$1 \$2;
 #X obj 111 484 makefilename %s/;
 #X text 58 49 open example patches;
-#X msg 58 97 perlin.3d~-help.example-circles.pd;
-#X msg 137 302 perlin.3d~-help.example-trio.pd;
-#X msg 110 233 perlin.3d~-help.example-voices.pd;
-#X msg 84 164 perlin.3d~-help.example-modulation.pd;
+#X msg 58 97 perlin_3d~-help.example-circles.pd;
+#X msg 137 302 perlin_3d~-help.example-trio.pd;
+#X msg 110 233 perlin_3d~-help.example-voices.pd;
+#X msg 84 164 perlin_3d~-help.example-modulation.pd;
 #X obj 173 547 print;
 #X obj 58 73 r \$0-examples-circles;
 #X obj 84 140 r \$0-examples-modulation;
@@ -1320,7 +1320,7 @@
 #X connect 14 0 9 0;
 #X connect 15 0 8 0;
 #X restore 1383 1504 pd run_page2;
-#X text 13 723 You can activate the visualization on the right (requires Gem to work - which can be installed via Deken) to see a 2d or 3d plot of the values of perlin.3d~. You can switch through the presets or play around with the parameters on the right yourself. All visuals are generated with the perlin.3d~ abstraction., f 57;
+#X text 13 723 You can activate the visualization on the right (requires Gem to work - which can be installed via Deken) to see a 2d or 3d plot of the values of perlin_3d~. You can switch through the presets or play around with the parameters on the right yourself. All visuals are generated with the perlin_3d~ abstraction., f 57;
 #X text 965 839 (ELSE required for dynamic positioning);
 #X obj 1383 174 block~ 512 1 1;
 #X text 13 1421 A popular application in visual arts is to sample values with a circular movement in Perlin space. This allows to create seamless loops of noise which can be used to e.g. create GIFs with seemingly random patterns that perfectly loop.;
@@ -1364,7 +1364,7 @@
 #X obj 1276 106 osc~ 0.3;
 #X obj 1097 106 phasor~ 1.7;
 #X obj 1183 106 phasor~ 0.03;
-#X obj 1097 167 perlin.3d~ 8 normalize;
+#X obj 1097 167 perlin_3d~ 8 normalize;
 #X connect 30 0 31 0;
 #X connect 30 0 31 1;
 #X connect 32 0 44 3;

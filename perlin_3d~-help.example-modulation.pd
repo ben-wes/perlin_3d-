@@ -27,9 +27,9 @@
 #X obj 694 300 hsl 162 19 0.01 1 1 1 empty empty frequency\ of\ noise\ modulating\ modulation\ of\ frequency\ of\ modulating\ noise 170 10 0 12 #c6ffc7 #000000 #000000 7700 1;
 #X obj 825 368 *~ 256;
 #X obj 806 477 phasor~ 0.05;
-#X obj 656 676 perlin.3d~ 6 -persistence 0.5 -offset 0.2;
-#X obj 674 538 perlin.3d~ 4 -persistence 0.2;
-#X obj 692 405 perlin.3d~ 4 -persistence 0.5;
+#X obj 656 676 perlin_3d~ 6 -persistence 0.5 -offset 0.2;
+#X obj 674 538 perlin_3d~ 4 -persistence 0.2;
+#X obj 692 405 perlin_3d~ 4 -persistence 0.5;
 #X obj 167 615 phasor~ 0.001;
 #X obj 78 357 hsl 162 19 0 128 0 1 empty empty modulating\ range -2 -10 0 12 #c6ffc7 #000000 #000000 2500 1;
 #X floatatom 75 381 5 0 0 0 - - - 0;
@@ -44,8 +44,8 @@
 #X obj 344 150 hsl 162 19 0.02 2 1 1 empty empty persistence -2 -10 0 12 #c6ffc7 #000000 #000000 5200 1;
 #X msg 341 237 persistence \$1;
 #X floatatom 341 175 5 0 0 0 - - - 0;
-#X obj 57 268 perlin.3d~ 4 -persistence 0.4 -offset 0.5;
-#X obj 57 676 perlin.3d~ 4 -offset 0.3;
+#X obj 57 268 perlin_3d~ 4 -persistence 0.4 -offset 0.5;
+#X obj 57 676 perlin_3d~ 4 -offset 0.3;
 #X obj 152 212 phasor~ 0.002;
 #X obj 75 404 pack f 200;
 #X obj 825 344 phasor~ 0.001;

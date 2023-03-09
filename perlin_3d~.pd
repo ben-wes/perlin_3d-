@@ -8,7 +8,7 @@
 #X obj 256 132 inlet~;
 #X text 310 131 z;
 #X obj 63 132 inlet~ fwd;
-#X obj 63 432 clone \$1 perlin.3d~.cl \$0, f 42;
+#X obj 63 432 clone \$1 perlin_3d~.cl \$0, f 42;
 #N canvas 708 60 502 761 create_permutation 0;
 #X obj 96 378 until;
 #X obj 96 347 t f b;
