@@ -2,10 +2,10 @@
 3D Perlin noise abstraction for Pure Data (Pd) with signal rate input/output (based on Perlin's improved version - see https://cs.nyu.edu/~perlin/noise/)
 
 ## Installation
-Install by adding the downloaded folder as `perlin.3d~/` to Pd's path (e.g. in `externals` directory).
+Install by adding the downloaded folder as `perlin_3d~/` to Pd's path (e.g. in `externals` directory).
 
 ## Usage
-The abstraction `perlin.3d~` requires the number of octaves as its first argument (it will default to 1 - but produce a clone error message).
+The abstraction `perlin_3d~` requires the number of octaves as its first argument (it will default to 1 - but produce a clone error message).
 
 Additional optional arguments:
 * `normalize` or `n` flag to ensure that the sum of all octaves will not exceed 1.
