@@ -1,4 +1,4 @@
-# perlin.3d~
+# perlin_3d~
 3D Perlin noise abstraction for Pure Data (Pd) with signal rate input/output (based on Perlin's improved version - see https://cs.nyu.edu/~perlin/noise/)
 
 ## Installation
